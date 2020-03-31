@@ -1,5 +1,7 @@
 package com.mp.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.mp.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
@@ -80,6 +82,49 @@ class UserMapperTest {
         }
     }
 
+    /**
+     * 1.名字中包含雨且年龄小于40的
+     * name like '%雨%' and age < 40
+     */
+    @Test
+    void selectByWrapper1() {
+        // QueryWrapper<User> query = Wrappers.query();  // 多种创建QueryWrapper的方式
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like("name","雨").lt("age",40);
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
 
+    /**
+     * 2.名字中包含雨且年龄大于等于20且小于等于40且email不能为空
+     * name like '%雨%' and age between 20 and 40 and email is not null
+     */
+    @Test
+    void selectByWrapper2() {
+        QueryWrapper<User> queryWrapper = Wrappers.query();
+        queryWrapper.like("name", "雨").between("age", 20, 40).isNotNull("email");
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+    /**
+     * 3.名字为王姓或者年龄大于等于25，按照年龄降序排列，年龄相同按照id升序排列
+     * name like '王%' or age >= 25 order by age desc,id asc
+     */
+    @Test
+    void selectByWrapper3() {
+        QueryWrapper<User> queryWrapper = Wrappers.query();
+        queryWrapper.likeRight("name", "王").or().ge("age", 25)
+                .orderByDesc("age").orderByAsc("id");
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
 
 }
