@@ -127,7 +127,7 @@ class UserMapperTest {
         }
     }
     /**
-     * 创建日期为2019年2月14日并且直属上级为名字为王姓
+     * 4.创建日期为2019年2月14日并且直属上级为名字为王姓
      * date_format(create_time,'%Y-%m-%d')='2019-02-14' and manager_id in (select id from user where name like '王%')
      */
     @Test
@@ -135,6 +135,36 @@ class UserMapperTest {
         QueryWrapper<User> queryWrapper = Wrappers.query();
         queryWrapper.apply("date_format(create_time,'%Y-%m-%d') = {0}", "2019-02-14")
                 .inSql("manager_id","select id from user where name like '王%'");
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
+    /**
+     * 5.名字为王姓并且（年龄小于40或邮箱不为空）
+     * name like '王%' and (age<40 or email is not null)
+     */
+    @Test
+    void selectByWrapper5() {
+        QueryWrapper<User> queryWrapper = Wrappers.query();
+        queryWrapper.likeRight("name", "王").and(wq -> wq.lt("age", 40).or().isNotNull("email"));
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
+    /**
+     * 6.名字为王姓或者（年龄小于40并且年龄大于20并且邮箱不为空）
+     * name like '王%' or (age<40 and age>20 and email is not null)
+     */
+    @Test
+    void selectByWrapper6() {
+        QueryWrapper<User> queryWrapper = Wrappers.query();
+        queryWrapper.likeRight("name", "王").or(wq -> wq.lt("age", 40).gt("age", 20).isNotNull("email"));
 
         List<User> users = userMapper.selectList(queryWrapper);
         for (User user : users) {
