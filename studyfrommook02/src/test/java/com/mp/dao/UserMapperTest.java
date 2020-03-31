@@ -285,6 +285,30 @@ class UserMapperTest {
 
     }
 
+    /**
+     * 实体作为条件构造器方法的参数
+     */
+    @Test
+    void selectByWrapperEntity() {
+        /**
+         * SELECT id,name,age,email,manager_id,create_time FROM user WHERE name=? AND age=?
+         * 默认是等于号，可以在实体类加注解 改变符号
+         * @TableField(condition = SqlCondition.LIKE)
+         * @TableField(condition = "%s&lt;#{%s}")
+         * SELECT id,name,age,email,manager_id,create_time FROM user WHERE name LIKE CONCAT('%',?,'%') AND age<?
+         *
+         */
+        User whereUser = new User();
+        whereUser.setName("王雨");
+        whereUser.setAge(20);
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>(whereUser);
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
 
 
 }
