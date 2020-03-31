@@ -40,3 +40,17 @@ public class User {
     private String realName;
 }
 ~~~
+## 三、排除非字段的三种方式
+
+- transient 关键字
+  ~~~.java
+  // 将不需要序列化的属性前添加关键字transient
+  private transient String remark;
+  ~~~
+- static 关键字
+- @TableField(exist = false)
+  ```.java
+  // 此注解exist属性默认为true，为数据库存在的字段，fasle，为数据不存在的字段
+  @TableField(exist = false)
+  private String remark;
+  ```

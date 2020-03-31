@@ -25,4 +25,8 @@ public class User {
 
     private LocalDateTime createTime;
 
+    // 备注
+    @TableField(exist = false)
+    private String remark;
+
 }

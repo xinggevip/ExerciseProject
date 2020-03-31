@@ -34,7 +34,10 @@ class UserMapperTest {
         user.setAge(20);
         user.setManagerId(1088248166370832385L);
         user.setCreateTime(LocalDateTime.now());
+        user.setEmail("zs@qq.com");
+        user.setRemark("备注，不会被插入到数据库");
         int rows = userMapper.insert(user);
+        log.info("user = {}",user);
         Assertions.assertEquals(1,rows);
         log.info("rows = {}",rows);
     }
