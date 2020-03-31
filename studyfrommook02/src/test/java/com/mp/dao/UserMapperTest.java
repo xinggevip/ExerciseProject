@@ -1,6 +1,7 @@
 package com.mp.dao;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.mp.entity.User;
 import lombok.extern.slf4j.Slf4j;
@@ -252,5 +253,38 @@ class UserMapperTest {
             log.info("user = {}",user);
         }
     }
+
+    /**
+     * condition作用
+     */
+    @Test
+    void testCondition() {
+        String name = "王";
+        String email = "";
+        condition(name,email);
+    }
+
+    private void condition(String name,String email) {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        // 旧写法 繁琐
+//        if (StringUtils.isNotEmpty(name)) {
+//            queryWrapper.like("name", name);
+//        }
+//
+//        if (StringUtils.isNotEmpty(email)) {
+//            queryWrapper.like("email", email);
+//        }
+        // 新写法 简洁
+        queryWrapper.like(StringUtils.isNotEmpty(name), "name", name)
+                .like(StringUtils.isNotEmpty(email), "email", email);
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+
+    }
+
+
 
 }
