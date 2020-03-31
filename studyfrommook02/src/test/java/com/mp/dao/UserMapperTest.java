@@ -218,4 +218,39 @@ class UserMapperTest {
         }
     }
 
+    /**
+     * 10.名字中包含雨且年龄小于40的
+     * 指定返回字段
+     * SELECT id,name FROM user WHERE name LIKE ? AND age < ?
+     */
+    @Test
+    void selectByWrapper10() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("id","name").like("name","雨").lt("age",40);
+
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
+    /**
+     * 11.名字中包含雨且年龄小于40的
+     * 指定非返回字段
+     * SELECT id,name,age,email FROM user WHERE name LIKE ? AND age < ?
+     */
+    @Test
+    void selectByWrapper11() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("id","name").like("name","雨").lt("age",40)
+                .select(User.class,info->!info.getColumn().equals("create_time")&&
+                        !info.getColumn().equals("manager_id"));
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
 }
