@@ -309,6 +309,37 @@ class UserMapperTest {
         }
     }
 
+    /**
+     * AllEq用法
+     */
+    @Test
+    void selectByWrapperAllEq() {
+
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("name", "王雨");
+        params.put("age", null);
+
+        /**
+         * queryWrapper.allEq(params);
+         * 第二个参数不填，默认为true，如果属性值为null 则拼接 is null
+         * SELECT id,name,age,email,manager_id,create_time FROM user WHERE name = ? AND age IS NULL
+         * 填false，如果为null，则不拼接
+         * SELECT id,name,age,email,manager_id,create_time FROM user WHERE name = ?
+         */
+        // queryWrapper.allEq(params,false);
+
+        /**
+         * 过滤属性key，即不拼接条件
+         * SELECT id,name,age,email,manager_id,create_time FROM user WHERE age IS NULL
+         */
+        queryWrapper.allEq((k, v) -> !k.equals("name"), params);
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
 
 
 }
