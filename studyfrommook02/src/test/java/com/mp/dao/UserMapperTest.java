@@ -126,5 +126,20 @@ class UserMapperTest {
             log.info("user = {}",user);
         }
     }
+    /**
+     * 创建日期为2019年2月14日并且直属上级为名字为王姓
+     * date_format(create_time,'%Y-%m-%d')='2019-02-14' and manager_id in (select id from user where name like '王%')
+     */
+    @Test
+    void selectByWrapper4() {
+        QueryWrapper<User> queryWrapper = Wrappers.query();
+        queryWrapper.apply("date_format(create_time,'%Y-%m-%d') = {0}", "2019-02-14")
+                .inSql("manager_id","select id from user where name like '王%'");
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
 
 }
