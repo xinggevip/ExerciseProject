@@ -30,8 +30,8 @@ class UserMapperTest {
          * MybatisPlus 默认的插入规则是 如果对象属性为null，则不插入
          */
         User user = new User();
-        user.setName("张三");
-        user.setAge(19);
+        user.setRealName("赵六");
+        user.setAge(20);
         user.setManagerId(1088248166370832385L);
         user.setCreateTime(LocalDateTime.now());
         int rows = userMapper.insert(user);
