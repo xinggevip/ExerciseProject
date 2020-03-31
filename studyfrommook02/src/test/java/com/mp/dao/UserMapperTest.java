@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 @Slf4j
@@ -338,6 +339,81 @@ class UserMapperTest {
         for (User user : users) {
             log.info("user = {}",user);
         }
+    }
+
+    /**
+     * 返回结果封装成map，
+     * 优点：只返回select指定的字段
+     */
+    @Test
+    void selectByWrapperMaps() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("id","name").like("name","雨").lt("age",40);
+
+
+        List<Map<String, Object>> users = userMapper.selectMaps(queryWrapper);
+        users.forEach(System.out::print);
+    }
+
+    /**
+     * 按照直属上级分组，查询每组的平均年龄、最大年龄、最小年龄。
+     * 并且只取年龄总和小于500的组。
+     * select avg(age) avg_age,min(age) min_age,max(age) max_age
+     * from user
+     * group by manager_id
+     * having sum(age) <500
+     */
+    @Test
+    void selectByWrapperMaps2() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("avg(age) avg_age","min(age) min_age","max(age) max_age")
+                .groupBy("manager_id").having("sum(age)<{0}",500);
+
+        List<Map<String, Object>> users = userMapper.selectMaps(queryWrapper);
+        users.forEach(System.out::println);
+        /**
+         * {max_age=40, avg_age=40.0000, min_age=40}
+         * {max_age=25, avg_age=25.0000, min_age=25}
+         * {max_age=32, avg_age=23.3333, min_age=19}
+         */
+    }
+
+    /**
+     * 只返回每个结果的第一个属性的值
+     * 40.0000
+     * 25.0000
+     * 23.3333
+     */
+    @Test
+    void selectByWrapperObjs() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("avg(age) avg_age","min(age) min_age","max(age) max_age")
+                .groupBy("manager_id").having("sum(age)<{0}",500);
+
+        List<Object> users = userMapper.selectObjs(queryWrapper);
+        users.forEach(System.out::println);
+    }
+
+    // 查询符合条件的记录数
+    @Test
+    void selectByWrapperCount() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like("name","雨").lt("age",40);
+
+        Integer rows = userMapper.selectCount(queryWrapper);
+        log.info("rows = {}",rows);
+    }
+
+    /**
+     * 只能返回一条结果，找到两个及以上结果会报错
+     */
+    @Test
+    void selectByWrapperOne() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like("name","王雨").lt("age",40);
+
+        User user = userMapper.selectOne(queryWrapper);
+        log.info("user = {}",user);
     }
 
 
