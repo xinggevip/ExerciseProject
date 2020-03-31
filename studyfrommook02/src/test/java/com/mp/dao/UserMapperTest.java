@@ -172,4 +172,50 @@ class UserMapperTest {
         }
     }
 
+    /**
+     * 7.（年龄小于40或邮箱不为空）并且名字为王姓
+     * (age<40 or email is not null) and name like '王%'
+     */
+    @Test
+    void selectByWrapper7() {
+        QueryWrapper<User> queryWrapper = Wrappers.query();
+        queryWrapper.nested(wq -> wq.lt("age", 40).or().isNotNull("email"))
+                .likeRight("name","王");
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
+    /**
+     * 8.年龄为30、31、34、35
+     * age in (30、31、34、35)
+     */
+    @Test
+    void selectByWrapper8() {
+        QueryWrapper<User> queryWrapper = Wrappers.query();
+        queryWrapper.in("age", Arrays.asList(30, 31, 34, 35));
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
+    /**
+     * 9.只返回满足条件的其中一条语句即可
+     * limit 1
+     */
+    @Test
+    void selectByWrapper9() {
+        QueryWrapper<User> queryWrapper = Wrappers.query();
+        queryWrapper.in("age", Arrays.asList(30, 31, 34, 35)).last("limit 1");
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        for (User user : users) {
+            log.info("user = {}",user);
+        }
+    }
+
 }
