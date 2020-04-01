@@ -16,8 +16,8 @@ mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   global-config:
     db-config:
-      id-type: none
-      field-strategy: not_null #not_null 为null则不加入条件; not_empty 非空判断（null和空值） true则不加入条件; ignored 为忽略判断，不管是否为null或为空，一律覆盖，有风险
+      field-strategy: not_empty #not_null 为null则不加入条件; not_empty 非空判断（null和空值） true则不加入条件; ignored 为忽略判断，不管是否为null或为空，一律覆盖，有风险
       #table-prefix: mp #表前缀
+      id-type: input
   #configLocation:classpath:mybatis-config.xml # configLocation不能和configuration同时设置，否则会报错
   #type-aliases-package: com.mp.entity  # 设置包名 这样mapper.xml文件就不用写全路径的包名了
