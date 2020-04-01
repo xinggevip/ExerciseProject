@@ -2,9 +2,15 @@ package com.mp.dao;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQueryChainWrapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.mp.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
@@ -24,6 +30,8 @@ class UserMapperTest {
 
     @Autowired
     private UserMapper userMapper;
+
+    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     @Test
     void select() {
@@ -486,6 +494,61 @@ class UserMapperTest {
         for (Map<String, Object> map : maps) {
             log.info("map = {}",map);
         }
+    }
+
+    /**
+     * 使用分页插件 ok
+     * com.mp.config.MybatisPlusConfig 配置下才可以
+     * 分页 返回list<obj>
+     * SELECT id,name,age,email,manager_id,create_time FROM user WHERE age >= ? LIMIT ?,?
+     */
+    @Test
+    void setPage() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.ge("age", 20);
+        Page<User> page = new Page<User>(1, 3);
+
+        IPage<User> iPage = userMapper.selectPage(page, queryWrapper);
+        log.info("总页数 = {}",iPage.getPages());
+        log.info("总记录数 = {}",iPage.getTotal());
+        List<User> records = iPage.getRecords();
+        records.forEach(System.out::println);
+    }
+
+    /**
+     * 使用分页插件 ok
+     * com.mp.config.MybatisPlusConfig 配置下才可以
+     * 分页 返回list<map>
+     * SELECT id,name,age,email,manager_id,create_time FROM user WHERE age >= ? LIMIT ?,?
+     */
+    @Test
+    void setPage2() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.ge("age", 20);
+        Page<User> page = new Page<User>(1, 3);
+
+        IPage<Map<String, Object>> iPage = userMapper.selectMapsPage(page, queryWrapper);
+        System.out.println("总页数 = " + iPage.getPages());
+        System.out.println("总记录数 = " + iPage.getTotal());
+        List<Map<String, Object>> records = iPage.getRecords();
+        records.forEach(System.out::println);
+    }
+
+
+    /**
+     * PageHelper插件测试可以成功分页
+     * SELECT id,name,age,email,manager_id,create_time FROM user WHERE age >= ? LIMIT ?
+     */
+    @Test
+    void pageHelperTest() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.ge("age", 20);
+        PageHelper.startPage(1,3);
+
+        List<User> users = userMapper.selectList(queryWrapper);
+        PageInfo<User> userPageInfo = new PageInfo<>(users);
+        log.info("pageInfo = {}",gson.toJson(userPageInfo));
+
     }
 
 
