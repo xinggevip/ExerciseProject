@@ -38,7 +38,7 @@ class UserMapperTest {
          * MybatisPlus 默认的插入规则是 如果对象属性为null，则不插入
          */
         User user = new User();
-        user.setName("赵六六");
+        user.setName("赵七");
         user.setAge(20);
         user.setManagerId(1088248166370832385L);
         user.setCreateTime(LocalDateTime.now());
@@ -461,6 +461,31 @@ class UserMapperTest {
                 .list();
         users.forEach(System.out::println);
 
+    }
+
+    /**
+     * 可使用注解或者XML文件自定sql
+     * select * from user WHERE name LIKE ? AND ( age < ? OR email IS NOT NULL )
+     */
+    @Test
+    void customSelectAll() {
+        LambdaQueryWrapper<User> lambdaQuery = Wrappers.<User>lambdaQuery();
+        lambdaQuery.likeRight(User::getName, "雨").and(lqw -> lqw.lt(User::getAge, 40).or()
+                .isNotNull(User::getEmail));
+        List<User> users = userMapper.selectAll(lambdaQuery);
+        users.forEach(System.out::println);
+    }
+
+    /**
+     * 自定义sql 多表查询
+     * SELECT * from user JOIN permission WHERE `user`.id = permission.user_id
+     */
+    @Test
+    void customSelectSql() {
+        List<Map<String, Object>> maps = userMapper.selectCustomSql();
+        for (Map<String, Object> map : maps) {
+            log.info("map = {}",map);
+        }
     }
 
 
