@@ -33,6 +33,7 @@ public class User extends Model<User> {
     @TableField(condition = "%s&lt;#{%s}")
     private Integer age;
 
+    // @TableField(strategy = FieldStrategy.NOT_EMPTY) // 局部NOT_EMPTY判断 可全局配置
     private String email;
 
     private Long managerId;
