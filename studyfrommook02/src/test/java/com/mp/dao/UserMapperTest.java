@@ -1,8 +1,10 @@
 package com.mp.dao;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.service.additional.query.impl.LambdaQueryChainWrapper;
 import com.mp.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
@@ -415,6 +417,53 @@ class UserMapperTest {
         User user = userMapper.selectOne(queryWrapper);
         log.info("user = {}",user);
     }
+
+    /**
+     * LambdaQueryWrapper相比QueryWrapper
+     * 优点：防误写，属性写错有提示
+     */
+    @Test
+    void selectLambda() {
+        // 方式一创建
+        //LambdaQueryWrapper<User> lambda = new QueryWrapper<User>().lambda();
+        // 方式二创建
+        //LambdaQueryWrapper<User> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        // 方式三创建
+        LambdaQueryWrapper<User> lambdaQuery = Wrappers.<User>lambdaQuery();
+
+        lambdaQuery.like(User::getName,"雨").lt(User::getAge,40);
+        List<User> users = userMapper.selectList(lambdaQuery);
+        users.forEach(System.out::println);
+
+    }
+
+    /**
+     * 5.名字为王姓并且（年龄小于40或邮箱不为空）
+     * name like '王%' and (age<40 or email is not null)
+     */
+    @Test
+    void selectLambda2() {
+        LambdaQueryWrapper<User> lambdaQuery = Wrappers.<User>lambdaQuery();
+        lambdaQuery.likeRight(User::getName, "雨").and(lqw -> lqw.lt(User::getAge, 40).or()
+                .isNotNull(User::getEmail));
+        List<User> users = userMapper.selectList(lambdaQuery);
+        users.forEach(System.out::println);
+    }
+
+    /**
+     * SELECT id,name,age,email,manager_id,create_time FROM user WHERE name LIKE ? AND age >= ?
+     */
+    @Test
+    void  selectLambda3() {
+        List<User> users = new LambdaQueryChainWrapper<User>(userMapper)
+                .like(User::getName, "雨")
+                .ge(User::getAge, 20)
+                .list();
+        users.forEach(System.out::println);
+
+    }
+
+
 
 
 
