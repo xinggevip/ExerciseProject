@@ -16,9 +16,9 @@ public class FillTest {
     @Test
     void insertTest() {
         User user = new User();
-        user.setName("新增A");
+        user.setName("新增d");
         user.setAge(20);
-        user.setManagerId(1088248166370832385L);
+        //user.setManagerId(1088248166370832385L);
         user.setEmail("1511@qq.com");
         int rows = userMapper.insert(user);
         Assertions.assertEquals(1, rows);
