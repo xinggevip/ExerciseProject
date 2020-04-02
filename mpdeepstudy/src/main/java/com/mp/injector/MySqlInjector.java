@@ -12,7 +12,7 @@ public class MySqlInjector extends DefaultSqlInjector {
 
     public List<AbstractMethod> getMethodList(Class<?> mapperClass) {
         List<AbstractMethod> methodList = super.getMethodList(mapperClass);
-        methodList.add(new DeleteAllMethod());
+        methodList.add(new DeleteAllMethod());  // 添加任意自定义的sql
         return methodList;
     }
 }
