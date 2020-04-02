@@ -16,5 +16,10 @@ public interface UserMapper extends BaseMapper<User> {
     @Select("select * from user ${ew.customSqlSegment}")
     List<User> customSelect(@Param(Constants.WRAPPER) Wrapper<User> wrapper);
 
+    /**
+     * 删除所有
+     * @return
+     */
+     int deleteAll();
 
 }
