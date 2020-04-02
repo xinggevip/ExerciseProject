@@ -21,3 +21,4 @@ mybatis-plus:
       field-strategy: not_empty
       logic-not-delete-value: 0
       logic-delete-value: 1
+    #sql-parser-cache: true # 过滤不加入租户信息的方法 3.1.1之前的版本需要配置

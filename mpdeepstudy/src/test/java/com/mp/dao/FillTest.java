@@ -33,4 +33,10 @@ public class FillTest {
         Assertions.assertEquals(1, rows);
     }
 
+    @Test
+    void selectById() {
+        User user = userMapper.selectById(1087982257332887553L);
+        System.out.println(user);
+    }
+
 }

@@ -7,3 +7,9 @@
  Consume Time：4 ms 2020-04-02 14:30:35
  Execute SQL：INSERT INTO user (id, name, age, email, create_time, manager_id) VALUES (1245599491277557761, '新增d', 20, '1511@qq.com', '2020-04-02T14:30:35.499', 1088248166370832385)
 
+ Consume Time：9 ms 2020-04-02 14:43:06
+ Execute SQL：SELECT id, name, age, email, manager_id, create_time, update_time, version FROM user WHERE user.manager_id = 1088248166370832385 AND deleted = 0
+
+ Consume Time：7 ms 2020-04-02 14:44:27
+ Execute SQL：SELECT id,name,age,email,manager_id,create_time,update_time,version FROM user WHERE id=1087982257332887553 AND deleted=0
+

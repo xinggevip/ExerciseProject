@@ -1,12 +1,16 @@
 package com.mp.config;
 
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
+import com.baomidou.mybatisplus.core.parser.ISqlParserFilter;
+import com.baomidou.mybatisplus.core.parser.SqlParserHelper;
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantHandler;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
+import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -88,7 +92,22 @@ public class MyBatisPlusConfig {
 
         sqlParsers.add(tenantSqlParser);
         paginationInterceptor.setSqlParserList(sqlParsers);
+        paginationInterceptor.setSqlParserFilter(new ISqlParserFilter() {
+            @Override
+            public boolean doFilter(MetaObject metaObject) {
 
+                /**
+                 * 符合条件则不加入租户信息
+                 * SELECT id,name,age,email,manager_id,create_time,update_time,version FROM user WHERE id=? AND deleted=0
+                 */
+                MappedStatement ms = SqlParserHelper.getMappedStatement(metaObject);
+                if ("com.mp.dao.UserMapper.selectById".equals(ms.getId())) {
+                    return true;
+                }
+
+                return false;
+            }
+        });
         return paginationInterceptor;
     }
 
