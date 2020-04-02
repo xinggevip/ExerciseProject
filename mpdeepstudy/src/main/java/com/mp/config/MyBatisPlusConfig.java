@@ -1,8 +1,10 @@
 package com.mp.config;
 
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
 public class MyBatisPlusConfig {
@@ -23,6 +25,15 @@ public class MyBatisPlusConfig {
     @Bean
     public OptimisticLockerInterceptor optimisticLockerInterceptor() {
         return new OptimisticLockerInterceptor();
+    }
+
+    @Bean
+    @Profile({"dev","test"}) // 指定生产环境生效
+    public PerformanceInterceptor performanceInterceptor() {
+        PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
+        performanceInterceptor.setFormat(true);  // 是否格式化，默认为false
+        performanceInterceptor.setMaxTime(5L);   // 超过5ms 就抛出异常
+        return performanceInterceptor;
     }
 
 }
