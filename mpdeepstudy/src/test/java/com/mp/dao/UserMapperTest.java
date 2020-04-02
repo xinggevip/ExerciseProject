@@ -1,5 +1,6 @@
 package com.mp.dao;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.mp.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -51,6 +52,31 @@ class UserMapperTest {
 
         int rows = userMapper.updateById(user);
         Assertions.assertEquals(1, rows);
+    }
+
+    /**
+     * 注意：
+     * 自定义sql不会自动在后面加条件
+     * select * from user WHERE age > ?
+     * 需要手动在sql中加入
+     * 或者在代码中写条件
+     */
+    @Test
+    void customSelect1Test() {
+        List<User> users = userMapper.customSelect(Wrappers.<User>lambdaQuery()
+                .gt(User::getAge, 20));
+        users.forEach(System.out::println);
+    }
+
+    /**
+     * select * from user WHERE age > ? AND deleted = ?
+     */
+    @Test
+    void customSelect2Test() {
+        List<User> users = userMapper.customSelect(Wrappers.<User>lambdaQuery()
+                .gt(User::getAge, 20)
+                .eq(User::getDeleted, 0));
+        users.forEach(System.out::println);
     }
 
 }
