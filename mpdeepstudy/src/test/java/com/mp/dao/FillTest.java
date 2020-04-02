@@ -1,10 +1,10 @@
 package com.mp.dao;
 
+import com.mp.config.MyBatisPlusConfig;
 import com.mp.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
@@ -35,6 +35,12 @@ public class FillTest {
 
     @Test
     void selectById() {
+        /**
+         * 注意
+         * sql进行了过滤后，指定表名则不生效
+         * SELECT id,name,age,email,manager_id,create_time,update_time,version FROM user WHERE id=? AND deleted=0
+         */
+        MyBatisPlusConfig.myTableName.set("user_2020");
         User user = userMapper.selectById(1087982257332887553L);
         System.out.println(user);
     }

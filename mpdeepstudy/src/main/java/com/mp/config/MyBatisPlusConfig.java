@@ -112,6 +112,7 @@ public class MyBatisPlusConfig {
                 /**
                  * 符合条件则不加入租户信息
                  * SELECT id,name,age,email,manager_id,create_time,update_time,version FROM user WHERE id=? AND deleted=0
+                 * sql进行了过滤后，指定表名则不生效
                  */
                 MappedStatement ms = SqlParserHelper.getMappedStatement(metaObject);
                 if ("com.mp.dao.UserMapper.selectById".equals(ms.getId())) {
