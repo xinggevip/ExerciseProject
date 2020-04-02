@@ -3,21 +3,23 @@ package com.mp.config;
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
 import com.baomidou.mybatisplus.core.parser.ISqlParserFilter;
 import com.baomidou.mybatisplus.core.parser.SqlParserHelper;
+import com.baomidou.mybatisplus.extension.parsers.DynamicTableNameParser;
+import com.baomidou.mybatisplus.extension.parsers.ITableNameHandler;
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.tenant.TenantHandler;
-import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
-import net.sf.jsqlparser.expression.Expression;
-import net.sf.jsqlparser.expression.LongValue;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.reflection.MetaObject;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @Configuration
 public class MyBatisPlusConfig {
+
+    public static ThreadLocal<String> myTableName = new ThreadLocal<>();
+
 
     /**
      * MyBatisPlus3.1.1版本以下需要此配置，以上则不需要配置
@@ -66,7 +68,7 @@ public class MyBatisPlusConfig {
          * 更新删除同样会自动加入条件
          */
         ArrayList<ISqlParser> sqlParsers = new ArrayList<>();
-        TenantSqlParser tenantSqlParser = new TenantSqlParser();
+        /*TenantSqlParser tenantSqlParser = new TenantSqlParser();
         tenantSqlParser.setTenantHandler(new TenantHandler() {
             @Override
             public Expression getTenantId() {
@@ -90,7 +92,18 @@ public class MyBatisPlusConfig {
             }
         });
 
-        sqlParsers.add(tenantSqlParser);
+        sqlParsers.add(tenantSqlParser);*/
+
+        DynamicTableNameParser dynamicTableNameParser = new DynamicTableNameParser();
+        HashMap<String, ITableNameHandler> tableNameHandlerHashMap = new HashMap<>();
+        tableNameHandlerHashMap.put("user", new ITableNameHandler() {
+            @Override
+            public String dynamicTableName(MetaObject metaObject, String sql, String tableName) {
+                return myTableName.get();
+            }
+        });
+        dynamicTableNameParser.setTableNameHandlerMap(tableNameHandlerHashMap);
+        sqlParsers.add(dynamicTableNameParser);
         paginationInterceptor.setSqlParserList(sqlParsers);
         paginationInterceptor.setSqlParserFilter(new ISqlParserFilter() {
             @Override

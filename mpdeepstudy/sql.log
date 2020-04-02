@@ -13,3 +13,6 @@
  Consume Time：7 ms 2020-04-02 14:44:27
  Execute SQL：SELECT id,name,age,email,manager_id,create_time,update_time,version FROM user WHERE id=1087982257332887553 AND deleted=0
 
+ Consume Time：13 ms 2020-04-02 15:26:20
+ Execute SQL：SELECT id,name,age,email,manager_id,create_time,update_time,version FROM user_2020 WHERE deleted=0
+

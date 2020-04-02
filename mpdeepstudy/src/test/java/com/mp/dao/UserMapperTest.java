@@ -1,6 +1,8 @@
 package com.mp.dao;
 
+import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.mp.config.MyBatisPlusConfig;
 import com.mp.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -36,6 +38,13 @@ class UserMapperTest {
      */
     @Test
     void selectTest() {
+
+        /**
+         * 指定表
+         * SELECT id,name,age,email,manager_id,create_time,update_time,version FROM user_2020 WHERE deleted=0
+         */
+        MyBatisPlusConfig.myTableName.set("user_2020");
+
         List<User> users = userMapper.selectList(null);
         users.forEach(System.out::println);
     }
