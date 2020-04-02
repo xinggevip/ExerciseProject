@@ -1,8 +1,9 @@
 package com.mp.entity;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * (User)实体类
@@ -35,11 +36,11 @@ public class User{
     /**
     * 创建时间
     */
-    private Date createTime;
+    private LocalDateTime createTime;
     /**
     * 修改时间
     */
-    private Date updateTime;
+    private LocalDateTime updateTime;
     /**
     * 版本
     */
@@ -47,6 +48,7 @@ public class User{
     /**
     * 逻辑删除标识(0.未删除,1.已删除)
     */
+    @TableLogic // 逻辑删除标识
     private Integer deleted;
 
 
