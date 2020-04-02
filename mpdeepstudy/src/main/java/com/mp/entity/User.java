@@ -3,6 +3,7 @@ package com.mp.entity;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -48,6 +49,7 @@ public class User{
     /**
     * 版本
     */
+    @Version // 标识版本
     private Integer version;
     /**
     * 逻辑删除标识(0.未删除,1.已删除)
