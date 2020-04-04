@@ -1,8 +1,8 @@
-package com.mp.demo.service;
+package com.homework.service;
 
-import com.mp.demo.domain.User;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.homework.domain.City;
 
 /**
  * <p>
@@ -10,26 +10,26 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
  * </p>
  *
  * @author xinggevip
- * @since 2020-04-02
+ * @since 2020-04-04
  */
-public interface UserService extends IService<User> {
+public interface CityService extends IService<City> {
 
     /**
      * 查询分页数据
      *
      * @param page      页码
      * @param pageCount 每页条数
-     * @return IPage<User>
+     * @return IPage<City>
      */
-    IPage<User> findListByPage(Integer page, Integer pageCount);
+    IPage<City> findListByPage(Integer page, Integer pageCount);
 
     /**
      * 添加
      *
-     * @param user 
+     * @param city 
      * @return int
      */
-    int add(User user);
+    int add(City city);
 
     /**
      * 删除
@@ -42,16 +42,17 @@ public interface UserService extends IService<User> {
     /**
      * 修改
      *
-     * @param user 
+     * @param city 
      * @return int
      */
-    int updateData(User user);
+    int updateData(City city);
 
     /**
      * id查询数据
      *
      * @param id id
-     * @return User
+     * @return City
      */
-    User findById(Long id);
+    City findById(Long id);
+
 }
