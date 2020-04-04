@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homework.dao.TimelineMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.homework.domain.Timeline">
+                    <id column="id" property="id"/>
+                    <result column="pub_date" property="pubDate"/>
+                    <result column="pub_date_str" property="pubDateStr"/>
+                    <result column="title" property="title"/>
+                    <result column="summary" property="summary"/>
+                    <result column="info_source" property="infoSource"/>
+                    <result column="source_url" property="sourceUrl"/>
+        </resultMap>
+
+        <!-- 通用查询结果列 -->
+        <sql id="Base_Column_List">
+            id, pub_date, pub_date_str, title, summary, info_source, source_url
+        </sql>
+    <delete id="deleteAll">
+        truncate table t_timeline
+    </delete>
+
+</mapper>

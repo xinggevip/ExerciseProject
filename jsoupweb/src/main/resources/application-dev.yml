@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ncov?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+
+logging:
+  level:
+    root: warn
+    com.homework.dao: trace  # 比debug信息更详细
+  pattern:
+    console: '%p%m%n'
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      field-strategy: not_empty
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+    #sql-parser-cache: true # 过滤不加入租户信息的方法 3.1.1之前的版本需要配置

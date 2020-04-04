@@ -1,4 +1,4 @@
-package com.mp.demo.config;
+package com.homework.config;
 
 import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;

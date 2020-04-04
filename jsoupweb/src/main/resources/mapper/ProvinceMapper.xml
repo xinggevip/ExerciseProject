@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.homework.dao.ProvinceMapper">
+
+        <!-- 通用查询映射结果 -->
+        <resultMap id="BaseResultMap" type="com.homework.domain.Province">
+                    <id column="location_id" property="locationId"/>
+                    <result column="province_name" property="provinceName"/>
+                    <result column="province_short_name" property="provinceShortName"/>
+                    <result column="current_confirmed_count" property="currentConfirmedCount"/>
+                    <result column="confirmed_count" property="confirmedCount"/>
+                    <result column="suspected_count" property="suspectedCount"/>
+                    <result column="cured_count" property="curedCount"/>
+                    <result column="dead_count" property="deadCount"/>
+                    <result column="comment" property="comment"/>
+                    <result column="statistics_data" property="statisticsData"/>
+        </resultMap>
+
+        <!-- 通用查询结果列 -->
+        <sql id="Base_Column_List">
+            location_id, province_name, province_short_name, current_confirmed_count, confirmed_count, suspected_count, cured_count, dead_count, comment, statistics_data
+        </sql>
+
+
+    <resultMap id="LeftQuery" type="com.homework.domain.Province" extends="BaseResultMap">
+        <collection property="cities" ofType="com.homework.domain.City">
+            <id column="id" property="id"/>
+            <result column="location_id" property="locationId"/>
+            <result column="province_location_id" property="provinceLocationId"/>
+            <result column="city_name" property="cityName"/>
+            <result column="current_confirmed_count" property="currentConfirmedCount"/>
+            <result column="confirmed_count" property="confirmedCount"/>
+            <result column="suspected_count" property="suspectedCount"/>
+            <result column="cured_count" property="curedCount"/>
+            <result column="dead_count" property="deadCount"/>
+        </collection>
+    </resultMap>
+
+    <select id="getAllAreaStat" resultMap="LeftQuery" resultType="com.homework.domain.Province">
+        SELECT * FROM `t_province` AS p LEFT JOIN `t_city` AS c ON p.location_id = c.province_location_id
+    </select>
+
+    <!-- 分步查询映射结果 -->
+    <!--<resultMap id="custResultMap" type="com.homework.domain.Province">-->
+        <!--<id column="location_id" property="locationId"/>-->
+        <!--<result column="province_name" property="provinceName"/>-->
+        <!--<result column="province_short_name" property="provinceShortName"/>-->
+        <!--<result column="current_confirmed_count" property="currentConfirmedCount"/>-->
+        <!--<result column="confirmed_count" property="confirmedCount"/>-->
+        <!--<result column="suspected_count" property="suspectedCount"/>-->
+        <!--<result column="cured_count" property="curedCount"/>-->
+        <!--<result column="dead_count" property="deadCount"/>-->
+        <!--<result column="comment" property="comment"/>-->
+        <!--<result column="statistics_data" property="statisticsData"/>-->
+
+        <!--<collection property="cities" ofType="com.homework.domain.City"-->
+            <!--select="com.homework.dao.CityMapper.getCityWidthProvinceLocationId"-->
+            <!--column="location_id">-->
+
+        <!--</collection>-->
+
+    <!--</resultMap>-->
+
+    <!--<select id="getAllAreaStat" resultMap="custResultMap">-->
+        <!--SELECT *-->
+        <!--FROM `t_province`-->
+    <!--</select>-->
+
+
+
+</mapper>
