@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.homework.dao.CityMapper;
+import com.homework.dao.ProvinceMapper;
 import com.homework.dao.TimelineMapper;
 import com.homework.domain.City;
 import com.homework.domain.Province;
@@ -15,6 +16,7 @@ import com.homework.service.CityService;
 import com.homework.service.ProvinceService;
 import com.homework.service.StatisticsService;
 import com.homework.service.TimelineService;
+import jdk.nashorn.internal.objects.annotations.Where;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,6 +54,9 @@ public class FixedTimeDo {
 
     @Autowired
     private TimelineMapper timelineMapper;
+
+    @Autowired
+    private ProvinceMapper provinceMapper;
 
     private String url = "https://ncov.dxy.cn/ncovh5/view/pneumonia";
 
@@ -103,6 +109,22 @@ public class FixedTimeDo {
             }
         }
         System.out.println(gson.toJson(provinceList));
+
+        // 写入数据库前过滤数据，即找出需要增加/更新的数据
+        // 1.从数据库找到所有省疫情数据
+        List<Province> provinceListOld = provinceMapper.selectList(null);
+        Iterator<Province> iterator = provinceList.iterator();
+        // 2.如果数据库没有数据，则跳过判断直接插入数据；否则找出一样的数据移除掉，然后saveorupdate
+        if (provinceListOld != null) {
+            // 遍历判断一样的数据，一样则移出
+            for (int i = 0; i < provinceList.size(); i++) {
+                if (provinceList.get(i).equals(provinceListOld.get(i))) {
+                    provinceList.remove(i);
+                    i--;
+                }
+
+            }
+        }
 
         // 写入到数据库
 

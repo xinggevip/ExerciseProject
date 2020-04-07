@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 @SpringBootTest
 class FixedTimeDoTest {
@@ -37,6 +38,25 @@ class FixedTimeDoTest {
     @Test
     void test3() throws IOException {
         fixedTimeDo.getTimeline();
+    }
+
+    /**
+     * 数组遍历删除测试
+     */
+    @Test
+    void listTest() {
+        ArrayList<String> list = new ArrayList<String>(3);
+        list.add("A");
+        list.add("B");
+        list.add("C");
+        list.add("C");
+        list.add("D");
+        list.add("E");
+
+        for (String s : list) {
+
+        }
+
     }
 
 }

@@ -12,7 +12,7 @@ public class MyTask {
     @Autowired
     private FixedTimeDo fixedTimeDo;
 
-    @Scheduled(cron = "0/30 * * * * ?")
+    @Scheduled(cron = "0 0/10 * * * ?")
     public void getDate() {
         try {
             // 刷新持久化全国概览数据
