@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html style="background-color: #e2e2e2;">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="{{ lay.base.keywords }}">
+<meta name="description" content="{{ lay.base.description }}">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>疫情地图</title>
+<link rel="stylesheet" href="layui/css/layui.css">
+<link rel="stylesheet" href="css/global.css">
+<!-- 引入 ECharts 文件 -->
+<script src="echarts/echarts.min.js"></script>
+<script src="echarts/map/js/china.js"></script>
+<script src="jquery/jquery.js"></script>
+<script src="vue/vue.js"></script>
+<style>
+.header {
+	border-bottom: 1px solid #404553;
+	border-right: 1px solid #404553;
+}
+
+.confirmedCls {
+	text-align: center;
+}
+
+.confirmedCls .currentConfirmedIncr {
+	color: #FFB800;
+	font-size: .8rem;
+}
+
+.confirmedCls .currentConfirmedCount {
+	color: #FF5722;
+	font-size: 1.5em;
+}
+
+.tituBold {
+	font-size: 1.2em;
+}
+
+.confirmedCls .confirmedIncr {
+	color: rgb(174, 33, 44);
+	font-size: .8rem;
+}
+
+.confirmedCls .confirmedCount {
+	color: rgb(174, 33, 44);
+	font-size: 1.5em;
+}
+
+.confirmedCls .suspectedIncr {
+	color: rgb(247, 130, 7);
+}
+
+.confirmedCls .suspectedCount {
+	color: rgb(247, 130, 7);
+	font-size: 1.5em;
+}
+
+.confirmedCls .deadIncr {
+	color: rgb(93, 112, 146);
+}
+
+.confirmedCls .deadCount {
+	color: rgb(93, 112, 146);
+	font-size: 1.5em;
+}
+
+.confirmedCls .seriousIncr {
+	color: rgb(162, 90, 78);
+}
+
+.confirmedCls .seriousCount {
+	color: rgb(162, 90, 78);
+	font-size: 1.5em;
+}
+
+.confirmedCls .curedIncr {
+	color: rgb(40, 183, 163);
+}
+
+.confirmedCls .curedCount {
+	color: rgb(40, 183, 163);
+	font-size: 1.5em;
+}
+</style>
+</head>
+<body class="fly-full">
+
+	<div class="fly-header layui-bg-black">
+		<div class="layui-container">
+
+			<ul class="layui-nav fly-nav layui-hide-xs">
+				<li class="layui-nav-item layui-this"><a href="/"><i
+						class="iconfont icon-jiaoliu"></i>疫情地图</a></li>
+				<!--<li class="layui-nav-item"><a href="#"><i-->
+						<!--class="iconfont icon-iconmingxinganli"></i>辟谣与防护</a></li>-->
+				<li class="layui-nav-item"><a href="/rTMsg.html"
+					><i class="iconfont icon-ui"></i>实时播报</a></li>
+				<!--<li class="layui-nav-item"><a href="#"-->
+					<!--target="_blank"><i class="iconfont icon-ui"></i>疾病知识</a></li>-->
+			</ul>
+
+
+		</div>
+	</div>
+	<div class="layui-container fly-marginTop" id="root">
+		<div style="padding: 20px; background-color: #F2F2F2;">
+			<div class="layui-row layui-col-space15">
+				<div class="layui-col-md12">
+					<div class="layui-card">
+						<div class="layui-card-header statistics">截至 {{timeHandle(mapData.modifyTime)}} 全国数据统计</div>
+					</div>
+				</div>
+				<div class="layui-col-md4">
+					<div class="layui-card">
+						<div class="layui-card-body confirmedCls">
+							<b style="font-size: .8em;">较昨日 <em
+								class="currentConfirmedIncr">{{mapData.currentConfirmedCountDifferenceValue}}</em>
+							</b><br> <strong class="currentConfirmedCount">{{mapData.currentConfirmedCount}}</strong><br>
+							<strong class="tituBold">现存确诊</strong><br> <br> <b
+								style="font-size: .8em;">较昨日 <em class="confirmedIncr">{{mapData.confirmedCountDifferenceValue}}</em>
+							</b><br> <strong class="confirmedIncr">{{mapData.confirmedCount}}</strong><br> <strong
+								class="tituBold">累计确诊</strong><br>
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-col-md4">
+					<div class="layui-card">
+						<div class="layui-card-body confirmedCls">
+							<b style="font-size: .8em;">较昨日 <em class="suspectedIncr">{{mapData.suspectedCountDifferenceValue}}</em>
+							</b><br> <strong class="suspectedCount">{{mapData.suspectedCount}}</strong><br> <strong
+								class="tituBold">现存疑似</strong><br> <br> <b
+								style="font-size: .8em;">较昨日 <em class="deadIncr">{{mapData.deadCountDifferenceValue}}</em>
+							</b><br> <strong class="deadCount">{{mapData.deadCount}}</strong><br> <strong
+								class="tituBold">累计死亡</strong><br>
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-col-md4">
+					<div class="layui-card">
+						<div class="layui-card-body confirmedCls">
+							<b style="font-size: .8em;">较昨日 <em class="seriousIncr">{{mapData.seriousCountDifferenceValue}}</em>
+							</b><br> <strong class="seriousCount">{{mapData.seriousCount}}</strong><br> <strong
+								class="tituBold">现存重症</strong><br> <br> <b
+								style="font-size: .8em;">较昨日 <em class="curedIncr">{{mapData.curedCountDifferenceValue}}</em>
+							</b><br> <strong class="curedCount">{{mapData.curedCount}}</strong><br> <strong
+								class="tituBold">累计治愈</strong><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<blockquote class="layui-elem-quote layui-text">疫情地图</blockquote>
+			<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+				<ul class="layui-tab-title">
+					<li class="layui-this">现存确诊</li>
+					<li>累计确诊</li>
+				</ul>
+				<div class="layui-tab-content" style="height:500px;">
+					<div class="layui-tab-item layui-show">
+						<div id="currentMap" style="width:900px;height:500px;margin:0 auto;"></div>
+					</div>
+					<div class="layui-tab-item">
+						<div id="confirmedMap" style="width:900px;height:500px;margin:0 auto;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="fly-footer">
+		<p>
+			<a href="http://qiangssvip.com/" target="_blank">油条</a> 2019 &copy; <a
+				href="http://qiangssvip.com/" target="_blank">qiangssvip.com
+				出品</a>
+		</p>
+	</div>
+
+    <script src="vue/axios-0.18.0.js"></script>
+	<script src="layui/layui.js"></script>
+	<script>
+		layui.cache.user = {
+			username : '游客',
+			uid : -1,
+			avatar : '../res/images/avatar/00.jpg',
+			experience : 83,
+			sex : '男'
+		};
+		layui.config({
+			version : "3.0.0",
+			base : 'mods/' //这里实际使用时，建议改成绝对路径
+		}).extend({
+			fly : 'index'
+		}).use([ 'fly', 'jquery' ], function() {
+			var $ = layui.jquery;
+
+		});
+	</script>
+
+    <script type="text/javascript">
+
+        // 全国概览功能
+        new Vue({
+           el: '#root',
+           data: {
+               mapData:[],
+               loading:true,
+               errored:false,
+               loading:false
+           },
+           methods: {
+             fatchData: function () {
+                 axios
+                   .get('/getAllStatistics')
+                   .then(response => {
+                     this.mapData = response.data;
+                     // 处理差值数字符号
+                     this.mapData.currentConfirmedCountDifferenceValue = this.numHandle(this.mapData.currentConfirmedCountDifferenceValue);
+                     this.mapData.confirmedCountDifferenceValue = this.numHandle(this.mapData.confirmedCountDifferenceValue);
+                     this.mapData.suspectedCountDifferenceValue = this.numHandle(this.mapData.suspectedCountDifferenceValue);
+                     this.mapData.deadCountDifferenceValue = this.numHandle(this.mapData.deadCountDifferenceValue);
+                     this.mapData.seriousCountDifferenceValue = this.numHandle(this.mapData.seriousCountDifferenceValue);
+                     this.mapData.curedCountDifferenceValue = this.numHandle(this.mapData.curedCountDifferenceValue);
+                     console.log(this.mapData);
+                   })
+                   .catch(error => {
+                     console.log(error);
+                     this.errored = true;
+                   })
+                   .finally(() => this.loading = false)
+             },
+             timeHandle(pubDate){
+
+                 Date.prototype.toLocaleString = function() {
+                 // 补0   例如 2018/7/10 14:7:2  补完后为 2018/07/10 14:07:02
+                 function addZero(num) {
+                     if(num<10)
+                         return "0" + num;
+                     return num;
+                 }
+                 // 按自定义拼接格式返回
+                     return this.getFullYear() + "年" + addZero(this.getMonth() + 1) + "月" + addZero(this.getDate()) + "日    "
+                      + addZero(this.getHours()) + ":" + addZero(this.getMinutes()) + ":" + addZero(this.getSeconds())
+                      ;
+                 };
+
+                 var date = new Date(pubDate);
+                 return date.toLocaleString();
+             },
+             numHandle(num){
+                 if (num > 0) {
+                     return "+" + num;
+                 }
+                 return num;
+
+             }
+
+
+           },
+           created:function() {
+              this.fatchData();
+           },
+           mounted:function() {
+
+           }
+         });
+
+         // 现存确诊地图功能
+        (function () {
+            // 基于准备好的dom，初始化echarts实例
+            var currentMap = echarts.init(document.getElementById('currentMap'));
+            window.dataList = null;
+            $.ajax({
+                //请求方式
+                type : "GET",
+                //请求的媒体类型
+                //contentType: "application/json;charset=UTF-8",
+                //请求地址
+                url : "/getAllAreaStat",
+                //请求数据数据，json字符串
+                // data : JSON.stringify(list),
+                //请求成功
+                success : function(result) {
+                    window.dataList = result;
+                    console.log(window.dataList);
+                    //  处理后端传来的数据 先将json对象转为json字符串，再替换你要替换的属性名，最后再转为json对象
+                    window.dataList = JSON.parse(JSON.stringify(window.dataList).replace(/provinceShortName/g,"name"));
+                    window.dataList = JSON.parse(JSON.stringify(window.dataList).replace(/currentConfirmedCount/g,"value"));
+
+                    option = {
+                        tooltip: {
+                            triggerOn: "click",
+                            formatter: function(e, t, n) {
+                                return .5 == e.value ? e.name + "：有疑似病例" : e.seriesName + "<br />" + e.name + "：" + e.value
+                            }
+                        },
+                        visualMap: {
+                            min: 0,
+                            max: 1000,
+                            left: 26,
+                            bottom: 40,
+                            showLabel: !0,
+                            text: ["高", "低"],
+                            pieces: [{
+                                gt: 100,
+                                label: "> 100 人",
+                                color: "#7f1100"
+                            }, {
+                                gte: 10,
+                                lte: 100,
+                                label: "10 - 100 人",
+                                color: "#ff5428"
+                            }, {
+                                gte: 1,
+                                lt: 10,
+                                label: "1 - 9 人",
+                                color: "#ff8c71"
+                            }, {
+                                gt: 0,
+                                lt: 1,
+                                label: "疑似",
+                                color: "#ffd768"
+                            }, {
+                                value: 0,
+                                color: "#ffffff"
+                            }],
+                            show: !0
+                        },
+                        geo: {
+                            map: "china",
+                            roam: !1,
+                            scaleLimit: {
+                                min: 1,
+                                max: 2
+                            },
+                            zoom: 1,
+                            top: 20,
+                            label: {
+                                normal: {
+                                    show: !0,
+                                    fontSize: "14",
+                                    color: "rgba(0,0,0,0.7)"
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    //shadowBlur: 50,
+                                    //shadowColor: 'rgba(0, 0, 0, 0.2)',
+                                    borderColor: "rgba(0, 0, 0, 0.2)"
+                                },
+                                emphasis: {
+                                    areaColor: "#f2d5ad",
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    borderWidth: 0
+                                }
+                            }
+                        },
+                        series: [{
+                            name: "现存确诊",
+                            type: "map",
+                            geoIndex: 0,
+                            data: window.dataList
+                        }]
+                    };
+
+                    currentMap.setOption(option);
+                },
+                //请求失败，包含具体的错误信息
+                error : function(e){
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+            });
+        })();
+
+        // 累计确诊地图功能
+        (function () {
+            // 基于准备好的dom，初始化echarts实例
+            var currentMap = echarts.init(document.getElementById('confirmedMap'));
+            window.dataList = null;
+            $.ajax({
+                //请求方式
+                type : "GET",
+                //请求的媒体类型
+                //contentType: "application/json;charset=UTF-8",
+                //请求地址
+                url : "/getAllAreaStat",
+                //请求数据数据，json字符串
+                // data : JSON.stringify(list),
+                //请求成功
+                success : function(result) {
+                    window.dataList = result;
+                    console.log(window.dataList);
+                    //  处理后端传来的数据 先将json对象转为json字符串，再替换你要替换的属性名，最后再转为json对象
+                    window.dataList = JSON.parse(JSON.stringify(window.dataList).replace(/provinceShortName/g,"name"));
+                    window.dataList = JSON.parse(JSON.stringify(window.dataList).replace(/confirmedCount/g,"value"));
+
+                    option = {
+                        tooltip: {
+                            triggerOn: "click",
+                            formatter: function(e, t, n) {
+                                return .5 == e.value ? e.name + "：有疑似病例" : e.seriesName + "<br />" + e.name + "：" + e.value
+                            }
+                        },
+                        visualMap: {
+                            min: 0,
+                            max: 1000,
+                            left: 26,
+                            bottom: 40,
+                            showLabel: !0,
+                            text: ["高", "低"],
+                            pieces: [{
+                                gt: 100,
+                                label: "> 100 人",
+                                color: "#7f1100"
+                            }, {
+                                gte: 10,
+                                lte: 100,
+                                label: "10 - 100 人",
+                                color: "#ff5428"
+                            }, {
+                                gte: 1,
+                                lt: 10,
+                                label: "1 - 9 人",
+                                color: "#ff8c71"
+                            }, {
+                                gt: 0,
+                                lt: 1,
+                                label: "疑似",
+                                color: "#ffd768"
+                            }, {
+                                value: 0,
+                                color: "#ffffff"
+                            }],
+                            show: !0
+                        },
+                        geo: {
+                            map: "china",
+                            roam: !1,
+                            scaleLimit: {
+                                min: 1,
+                                max: 2
+                            },
+                            zoom: 1,
+                            top: 20,
+                            label: {
+                                normal: {
+                                    show: !0,
+                                    fontSize: "14",
+                                    color: "rgba(0,0,0,0.7)"
+                                }
+                            },
+                            itemStyle: {
+                                normal: {
+                                    //shadowBlur: 50,
+                                    //shadowColor: 'rgba(0, 0, 0, 0.2)',
+                                    borderColor: "rgba(0, 0, 0, 0.2)"
+                                },
+                                emphasis: {
+                                    areaColor: "#f2d5ad",
+                                    shadowOffsetX: 0,
+                                    shadowOffsetY: 0,
+                                    borderWidth: 0
+                                }
+                            }
+                        },
+                        series: [{
+                            name: "累计确诊",
+                            type: "map",
+                            geoIndex: 0,
+                            data: window.dataList
+                        }]
+                    };
+
+                    currentMap.setOption(option);
+                },
+                //请求失败，包含具体的错误信息
+                error : function(e){
+                    console.log(e.status);
+                    console.log(e.responseText);
+                }
+            });
+        })();
+
+
+
+
+    </script>
+</body>
+</html>

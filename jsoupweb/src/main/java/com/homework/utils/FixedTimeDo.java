@@ -7,6 +7,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.homework.dao.CityMapper;
 import com.homework.dao.ProvinceMapper;
+import com.homework.dao.StatisticsMapper;
 import com.homework.dao.TimelineMapper;
 import com.homework.domain.City;
 import com.homework.domain.Province;
@@ -24,6 +25,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -57,6 +59,9 @@ public class FixedTimeDo {
 
     @Autowired
     private ProvinceMapper provinceMapper;
+
+    @Autowired
+    private StatisticsMapper statisticsMapper;
 
     private String url = "https://ncov.dxy.cn/ncovh5/view/pneumonia";
 
@@ -108,7 +113,7 @@ public class FixedTimeDo {
                 cities.add(city);
             }
         }
-        System.out.println(gson.toJson(provinceList));
+//        System.out.println(gson.toJson(provinceList));
 
         // 写入数据库前过滤数据，即找出需要增加/更新的数据
         // 1.从数据库找到所有省疫情数据
@@ -196,10 +201,37 @@ public class FixedTimeDo {
         Statistics statics = gson.fromJson(out, Statistics.class);
         statics.setCreateTime(localDateTimeCreateTime);
         statics.setModifyTime(localDateTimeModifyTime);
-        statics.setId(1);
+
+        /**
+         * 从数据库获取最后一条记录
+         */
+        Statistics statistics = statisticsMapper.selectLastRow();
+        /**
+         * 数据库获取最后一条记录为null，则执行插入，否则判断
+         */
+        if (statistics == null) {
+            statisticsService.save(statics);
+        } else {
+            /**
+             * 判断新老对象的修改时间是否为同一天
+             */
+            Boolean boo = thanTime(statics.getModifyTime(), statistics.getModifyTime());
+            if (boo) {
+                // 执行更新,根据id
+                statics.setId(statistics.getId());
+                statisticsService.updateById(statics);
+            } else {
+                // 执行插入
+                statisticsService.save(statics);
+            }
+
+        }
+
+
+        /*statics.setId(1);
         statisticsService.saveOrUpdate(statics);
 
-        System.out.println(gson.toJson(statics));
+        System.out.println(gson.toJson(statics));*/
 
     }
 
@@ -233,7 +265,7 @@ public class FixedTimeDo {
         // 插入新文章表
         timelineService.saveBatch(timelineList);
 
-        System.out.println(gson.toJson(timelineList));
+//        System.out.println(gson.toJson(timelineList));
     }
 
     /**
@@ -277,6 +309,18 @@ public class FixedTimeDo {
 
         }
         return textStr;// 返回文本字符串
+    }
+
+    /**
+     * 判断两个时间是否为同一天
+     * @param now
+     * @param end
+     * @return
+     */
+    private Boolean thanTime(LocalDateTime now,LocalDateTime end) {
+        Duration duration = Duration.between(now,end);
+        long days = duration.toDays(); //相差的天数
+        return days == 0 ? true : false;
     }
 
 }

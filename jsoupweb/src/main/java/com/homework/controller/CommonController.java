@@ -2,7 +2,6 @@ package com.homework.controller;
 
 
 import com.homework.domain.Province;
-import com.homework.domain.Statistics;
 import com.homework.domain.Timeline;
 import com.homework.service.CommonService;
 import io.swagger.annotations.Api;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Api(tags = {""})
 @RestController
@@ -29,11 +29,11 @@ public class CommonController {
     // 获取全国概览数据
     @ApiOperation(value = "获取全国概览数据")
     @GetMapping("/getAllStatistics")
-    public Statistics getAllStatistics(){
-        return commonService.getAllStatistics();
+    public Map<String,Object> getAllStatistics() throws Exception {
+        Map<String,Object> mapData = commonService.getStatisticsMap();
+        return mapData;
     }
     // 获取全国详情数据
-    // TODO 从数据库中读取数据，等待时间有点长 待优化
     @ApiOperation(value = "获取全国详情数据")
     @GetMapping("/getAllAreaStat")
     public List<Province> getAllAreaStat() throws IOException {

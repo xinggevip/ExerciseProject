@@ -35,5 +35,19 @@
         <sql id="Base_Column_List">
             id, create_time, modify_time, infect_source, pass_way, img_url, daily_pic, summary, deleted, count_remark, current_confirmed_count, confirmed_count, suspected_count, cured_count, dead_count, serious_count, virus, remark1, remark2, remark3, remark4, remark5, note1, note2, note3
         </sql>
+    <!-- 获取数据库最后一条数据 -->
+    <select id="selectLastRow" resultType="com.homework.domain.Statistics">
+      select * from t_statistics order by id desc limit 0,1;
+    </select>
+    <!-- 获取数据库倒数第二条数据，即昨天的数据 -->
+    <select id="selectYesterdayData" resultType="com.homework.domain.Statistics">
+      select * from t_statistics order by id desc limit 1,2;
+    </select>
+    <!-- 获取数据库倒数两条的数据 -->
+    <select id="selectTwoData" resultType="com.homework.domain.Statistics">
+      select * from t_statistics order by id desc limit 0,2;
+    </select>
+
+
 
 </mapper>
