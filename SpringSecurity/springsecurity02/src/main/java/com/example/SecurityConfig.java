@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
 @Configuration
@@ -56,6 +57,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .loginPage("/login.html")  // 自定义登录页面后，如果没有指定form的action，会默认和自定义的登录页值一样即action也是/login.html
+                .loginProcessingUrl("/doLogin")  // 请求接口
+                .usernameParameter("name")    // 用户名请求属性
+                .passwordParameter("passwd")  // 密码请求属性
+                .defaultSuccessUrl("/index")  // 重定向到登录前地址，记录登录前的地址
+                //.successForwardUrl("/index")  // 无视登录前的地址，访问指定请求
+                //.failureForwardUrl("/f2")     // 登录失败访问请求
+                .failureUrl("/f1")
+                .permitAll()
+                .and()
+                .logout()  //配置注销登录
+//                .logoutUrl("/logout")
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout","POST"))
+                .logoutSuccessUrl("/index")
+                .deleteCookies()              // 清除cookies  默认
+                .clearAuthentication(true)   // 清除身份信息  默认
+                .invalidateHttpSession(true) // 清除session   默认
                 .permitAll()
                 .and()
                 .csrf().disable();
