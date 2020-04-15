@@ -44,4 +44,12 @@ public class EmployeeController {
         return res;
     }
 
+    @PostMapping("/delemp/{id}")
+    public String delete(@PathVariable("id") Integer id) {
+        if (employeeService.deleteById(id)) {
+            return "success";
+        }
+        return "fail";
+    }
+
 }

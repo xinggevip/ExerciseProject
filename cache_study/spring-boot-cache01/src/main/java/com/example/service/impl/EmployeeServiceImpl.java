@@ -3,6 +3,7 @@ package com.example.service.impl;
 import com.example.dao.EmployeeDao;
 import com.example.entity.Employee;
 import com.example.service.EmployeeService;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -99,11 +100,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     /**
      * 通过主键删除数据
      *
+     * @CacheEvict 缓存清除
+     * key： 指定根据key删除，默认为参数属性名
+     * @CacheEvict(value = "emp",allEntries = true)  // 清空缓存
+     * 注意：清除缓存行为 默认是在方法执行之后，即方法体出现异常不会清除缓存
+     * @CacheEvict(value = "emp",key = "#id",beforeInvocation = true)  // 清除缓存行为在方法执行之前，无论是否出现异常都会清除缓存
+     *
      * @param id 主键
      * @return 是否成功
      */
     @Override
+    @CacheEvict(value = "emp",key = "#id")
     public boolean deleteById(Integer id) {
+        System.out.println("---->删除的employee的id是: "+id);
         return this.employeeDao.deleteById(id) > 0;
     }
 }
