@@ -38,4 +38,10 @@ public class EmployeeController {
         return employee;
     }
 
+    @PostMapping("/emp")
+    public Employee update(@RequestBody Employee employee) {
+        Employee res = employeeService.update(employee);
+        return res;
+    }
+
 }

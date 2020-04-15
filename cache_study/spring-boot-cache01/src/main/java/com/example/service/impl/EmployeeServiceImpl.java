@@ -3,6 +3,7 @@ package com.example.service.impl;
 import com.example.dao.EmployeeDao;
 import com.example.entity.Employee;
 import com.example.service.EmployeeService;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +49,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      *   @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator",condition = "#a0>1")  // 第一个参数大于1才进行缓存
      *   @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator",unless = "#a0==2")  // 第一个参数的值的等于二就不缓存
      */
-    @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator",unless = "#a0==2")
+    @Cacheable(cacheNames = "emp")
     public Employee queryById(Integer id) {
         System.out.println("查询" + id + "号员工");
         return this.employeeDao.queryById(id);
@@ -81,11 +82,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     /**
      * 修改数据
      *
+     * 同步更新数据库和缓存
+     * 注意：put的key和query的key要一致
+     *
      * @param employee 实例对象
      * @return 实例对象
      */
     @Override
+    @CachePut(cacheNames = {"emp"}, key = "#result.id")
     public Employee update(Employee employee) {
+        System.out.println("update:  " + employee);
         this.employeeDao.update(employee);
         return this.queryById(employee.getId());
     }
