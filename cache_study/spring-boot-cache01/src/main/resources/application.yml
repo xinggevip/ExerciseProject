@@ -11,3 +11,8 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*.xml
+
+#logging:
+#  level:
+#    root: debug
+#    com.example.dao: trace  # 比debug信息更详细
