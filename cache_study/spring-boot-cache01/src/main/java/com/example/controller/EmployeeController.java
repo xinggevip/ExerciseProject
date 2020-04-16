@@ -52,4 +52,9 @@ public class EmployeeController {
         return "fail";
     }
 
+    @GetMapping("/emp/lastname/{lastName}")
+    public Employee getEmployeeByLastName(@PathVariable("lastName") String lastName) {
+        return employeeService.getEmployeeByLastName(lastName);
+    }
+
 }

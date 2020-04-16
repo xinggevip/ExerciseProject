@@ -52,4 +52,11 @@ public interface EmployeeService {
      */
     boolean deleteById(Integer id);
 
+    /**
+     * 通过姓名查询数据
+     * @param lastName
+     * @return
+     */
+    Employee getEmployeeByLastName(String lastName);
+
 }

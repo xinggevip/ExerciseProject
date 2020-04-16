@@ -62,4 +62,5 @@ public interface EmployeeDao {
      */
     int deleteById(Integer id);
 
+    Employee getEmployeeByLastName(@Param("lastName") String lastName);
 }

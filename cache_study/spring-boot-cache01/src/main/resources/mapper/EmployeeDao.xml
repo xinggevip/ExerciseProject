@@ -49,6 +49,13 @@
             </if>
         </where>
     </select>
+    <select id="getEmployeeByLastName" resultType="com.example.entity.Employee">
+        select
+          id, last_name, email, gender, d_id
+        from spring_cache.employee
+--         where spring_cache.employee.last_name like "%${lastName}%"
+        where spring_cache.employee.last_name = #{lastName}
+    </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">

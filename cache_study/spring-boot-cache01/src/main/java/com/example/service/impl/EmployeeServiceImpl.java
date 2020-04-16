@@ -3,9 +3,7 @@ package com.example.service.impl;
 import com.example.dao.EmployeeDao;
 import com.example.entity.Employee;
 import com.example.service.EmployeeService;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.*;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,6 +15,7 @@ import java.util.List;
  * @author 油条
  * @since 2020-04-15 12:49:49
  */
+@CacheConfig(cacheNames = "emp")  // 配置公共属性
 @Service("employeeService")
 public class EmployeeServiceImpl implements EmployeeService {
     @Resource
@@ -50,7 +49,7 @@ public class EmployeeServiceImpl implements EmployeeService {
      *   @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator",condition = "#a0>1")  // 第一个参数大于1才进行缓存
      *   @Cacheable(cacheNames = {"emp"},keyGenerator = "myKeyGenerator",unless = "#a0==2")  // 第一个参数的值的等于二就不缓存
      */
-    @Cacheable(cacheNames = "emp")
+    @Cacheable(/*cacheNames = "emp"*/)
     public Employee queryById(Integer id) {
         System.out.println("查询" + id + "号员工");
         return this.employeeDao.queryById(id);
@@ -110,9 +109,28 @@ public class EmployeeServiceImpl implements EmployeeService {
      * @return 是否成功
      */
     @Override
-    @CacheEvict(value = "emp",key = "#id")
+    @CacheEvict(/*value = "emp",*/key = "#id")
     public boolean deleteById(Integer id) {
         System.out.println("---->删除的employee的id是: "+id);
         return this.employeeDao.deleteById(id) > 0;
+    }
+
+    /**
+     * Caching定义组合复杂注解
+     * @param lastName
+     * @return
+     */
+    @Caching(
+        cacheable = {
+            @Cacheable(/*value = "emp",*/key = "#lastName")
+        },
+        put = {
+            @CachePut(/*value = "emp",*/key = "#result.id"),
+            @CachePut(/*value = "emp",*/key = "#result.email")
+        }
+    )
+    public Employee getEmployeeByLastName(String lastName) {
+        Employee employee = employeeDao.getEmployeeByLastName(lastName);
+        return employee;
     }
 }
