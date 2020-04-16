@@ -21,8 +21,8 @@ public class RedisTest {
     @Autowired
     private RedisTemplate redisTemplate;  // k-v都是对象的
 
-    @Autowired
-    private RedisTemplate<Object, Employee> empRedisTemplate;
+//    @Autowired
+//    private RedisTemplate<Object, Employee> empRedisTemplate;
 
     @Autowired
     private EmployeeDao employeeDao;
@@ -47,21 +47,21 @@ public class RedisTest {
     void saveObjectTest01() {
         Employee employee = employeeDao.queryById(1);
         redisTemplate.opsForValue().set("emp-00",employee);
-        Employee employee1 = empRedisTemplate.opsForValue().get("emp-00");
-        System.out.println(employee1);  // TODO 返回竟然是null
+        Employee employee1 = (Employee)redisTemplate.opsForValue().get("emp-00");
+        System.out.println(employee1);
     }
 
 
     /**
      * 可以自定义序列化机制，把对象保存成json字符串
      */
-    @Test
-    void saveObjectTest02() {
-        Employee employee = employeeDao.queryById(1);
-        empRedisTemplate.opsForValue().set("emp-01",employee);
-        Employee employee1 = empRedisTemplate.opsForValue().get("emp-01");
-        System.out.println(employee1);  // Employee(id=1, lastName=string1111, email=string, gender=0, dId=0)
-    }
+//    @Test
+//    void saveObjectTest02() {
+//        Employee employee = employeeDao.queryById(1);
+//        empRedisTemplate.opsForValue().set("emp-01",employee);
+//        Employee employee1 = empRedisTemplate.opsForValue().get("emp-01");
+//        System.out.println(employee1);  // Employee(id=1, lastName=string1111, email=string, gender=0, dId=0)
+//    }
 
 
 

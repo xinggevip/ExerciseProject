@@ -1,8 +1,12 @@
 package com.example.service.impl;
 
-import com.example.entity.Department;
 import com.example.dao.DepartmentDao;
+import com.example.entity.Department;
 import com.example.service.DepartmentService;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,6 +18,7 @@ import java.util.List;
  * @author 油条
  * @since 2020-04-15 12:49:40
  */
+@CacheConfig(cacheNames = "dep")  // 配置公共属性
 @Service("departmentService")
 public class DepartmentServiceImpl implements DepartmentService {
     @Resource
@@ -26,6 +31,7 @@ public class DepartmentServiceImpl implements DepartmentService {
      * @return 实例对象
      */
     @Override
+    @Cacheable
     public Department queryById(Integer id) {
         return this.departmentDao.queryById(id);
     }
@@ -61,6 +67,7 @@ public class DepartmentServiceImpl implements DepartmentService {
      * @return 实例对象
      */
     @Override
+    @CachePut(key = "#result.id")
     public Department update(Department department) {
         this.departmentDao.update(department);
         return this.queryById(department.getId());
@@ -73,6 +80,7 @@ public class DepartmentServiceImpl implements DepartmentService {
      * @return 是否成功
      */
     @Override
+    @CacheEvict(key = "#id")
     public boolean deleteById(Integer id) {
         return this.departmentDao.deleteById(id) > 0;
     }

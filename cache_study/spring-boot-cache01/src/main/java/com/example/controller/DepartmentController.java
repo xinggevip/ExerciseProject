@@ -32,4 +32,24 @@ public class DepartmentController {
         return this.departmentService.queryById(id);
     }
 
+    @GetMapping("/dep/{id}")
+    public Department getEmployee(@PathVariable("id") Integer id) {
+        Department department = departmentService.queryById(id);
+        return department;
+    }
+
+    @PostMapping("/dep")
+    public Department update(@RequestBody Department department) {
+        Department res = departmentService.update(department);
+        return res;
+    }
+
+    @PostMapping("/deldep/{id}")
+    public String delete(@PathVariable("id") Integer id) {
+        if (departmentService.deleteById(id)) {
+            return "success";
+        }
+        return "fail";
+    }
+
 }
