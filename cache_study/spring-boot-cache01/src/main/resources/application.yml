@@ -4,6 +4,14 @@ spring:
     url: jdbc:mysql://192.168.163.128:3306/spring_cache?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=GMT%2B8
     username: root
     password: root
+  redis:
+    host: 192.168.163.128
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 500
+        min-idle: 50
+        max-active: 2000
 
 mybatis:
   type-aliases-package: com.example.entity
