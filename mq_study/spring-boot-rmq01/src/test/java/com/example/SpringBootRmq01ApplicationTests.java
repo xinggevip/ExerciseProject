@@ -2,6 +2,10 @@ package com.example;
 
 import com.example.entity.Book;
 import org.junit.jupiter.api.Test;
+import org.springframework.amqp.core.AmqpAdmin;
+import org.springframework.amqp.core.Binding;
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,6 +19,29 @@ class SpringBootRmq01ApplicationTests {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
+
+    @Autowired
+    private AmqpAdmin amqpAdmin;
+
+    // 创建Exchange
+    @Test
+    public void createExchange(){
+        amqpAdmin.declareExchange(new DirectExchange("amqpadmin.direct"));
+        System.out.println("Create Finish");
+    }
+
+    // 创建Queue
+    @Test
+    public void createQueue(){
+        amqpAdmin.declareQueue(new Queue("amqpadmin.queue",true));
+        System.out.println("Create Queue Finish");
+    }
+
+    // 创建Bind规则
+    @Test
+    public void createBind(){
+        amqpAdmin.declareBinding(new Binding("amqpadmin.queue", Binding.DestinationType.QUEUE , "amqpadmin.direct", "amqp.haha", null));
+    }
 
     /**
      * 点对点
