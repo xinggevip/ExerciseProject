@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.entity.Book;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ class SpringBootRmq01ApplicationTests {
      */
     @Test
     void sendMessageToAll() {
-        rabbitTemplate.convertAndSend("exchange.fanout","","广播1");
+        rabbitTemplate.convertAndSend("exchange.fanout","",new Book("红楼梦","曹雪芹"));
     }
 
 }
