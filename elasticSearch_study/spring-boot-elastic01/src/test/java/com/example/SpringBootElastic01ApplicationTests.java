@@ -1,6 +1,8 @@
 package com.example;
 
 import com.example.entity.Article;
+import com.example.entity.Book;
+import com.example.repostry.BookRepository;
 import io.searchbox.client.JestClient;
 import io.searchbox.core.Index;
 import io.searchbox.core.Search;
@@ -16,6 +18,9 @@ class SpringBootElastic01ApplicationTests {
 
     @Autowired
     private JestClient jestClient;
+
+    @Autowired
+    BookRepository bookRepository;
 
 
     @Test
@@ -58,6 +63,20 @@ class SpringBootElastic01ApplicationTests {
             System.out.println(result.getJsonString());
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    // TODO 无节点可用异常 待解决 可能因为springboot 和 elasticSearch版本不匹配
+    @Test
+    void saveRow2() {
+        Book book = new Book(1, "煤老板字数三十年", "钻石王老五");
+        bookRepository.index(book);
+    }
+
+    @Test
+    public void testSearch(){
+        for (Book book : bookRepository.findByBookNameLike("煤老板")) {
+            System.out.println(book);
         }
     }
 
