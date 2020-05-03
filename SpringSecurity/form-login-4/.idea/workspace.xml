@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9048c33a-58e6-4e26-a3da-1d8d9003f358" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/javaboy/formlogin/FormLoginApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/javaboy/formlogin/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/javaboy/formlogin/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/javaboy/formlogin/FormLoginApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/javaboy/formlogin/FormLoginApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/javaboy/formlogin/FormLoginApplicationTests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../websocket_study/websocket01/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../websocket_study/websocket01/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,7 +50,7 @@
         <counts>
           <entry key="class" value="3" />
           <entry key="html" value="1" />
-          <entry key="java" value="8" />
+          <entry key="java" value="9" />
           <entry key="md" value="1" />
           <entry key="properties" value="1" />
           <entry key="xml" value="1" />
@@ -61,7 +59,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
-          <entry key="JAVA" value="8" />
+          <entry key="JAVA" value="9" />
           <entry key="Markdown" value="1" />
           <entry key="Properties" value="1" />
           <entry key="Svelte" value="1" />
@@ -70,16 +68,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="310" />
+          <entry key="java" value="815" />
           <entry key="md" value="28" />
           <entry key="properties" value="41" />
+          <entry key="txt" value="18" />
           <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="310" />
+          <entry key="JAVA" value="815" />
           <entry key="Markdown" value="28" />
+          <entry key="PLAIN_TEXT" value="18" />
           <entry key="Properties" value="41" />
           <entry key="XML" value="16" />
         </counts>
@@ -89,10 +89,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/SecurityConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-286">
-              <caret line="33" column="28" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="28" />
+            <state relative-caret-position="273">
+              <caret line="48" column="55" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,11 +100,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/HelloController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/controller/HelloController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="750">
+              <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+              <folding>
+                <element signature="e#966#967#0" expanded="true" />
+                <element signature="e#1010#1011#0" expanded="true" />
+                <element signature="e#1070#1071#0" expanded="true" />
+                <element signature="e#1113#1114#0" expanded="true" />
+                <element signature="e#1173#1174#0" expanded="true" />
+                <element signature="e#1217#1218#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/MethodService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#592#593#0" expanded="true" />
+                <element signature="e#627#628#0" expanded="true" />
+                <element signature="e#761#762#0" expanded="true" />
+                <element signature="e#797#798#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,8 +150,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="303">
+              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,15 +185,15 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="8" column="75" lean-forward="true" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="75" />
+              <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="229">
               <caret line="51" column="9" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="9" />
               <caret line="52" column="25" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="25" />
               <caret line="53" column="68" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="68" />
@@ -213,10 +239,13 @@
         <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/MethodService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/controller/HelloController.java" />
       </list>
     </option>
   </component>
@@ -239,10 +268,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="261" />
-    <option name="y" value="-24" />
-    <option name="width" value="1489" />
-    <option name="height" value="880" />
+    <option name="x" value="355" />
+    <option name="y" value="-20" />
+    <option name="width" value="1514" />
+    <option name="height" value="949" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -284,6 +313,24 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="formlogin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
+              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
@@ -362,7 +409,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="SearchEverywhereHistoryKey" value="MySQL8Dialect&#9;PSI&#9;JAVA://org.hibernate.dialect.MySQL8Dialect" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588510196727" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588511988783" />
     <property name="last_opened_file_path" value="D:/知识库/github/oauth2-samples" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -385,7 +432,7 @@
       <module name="form-login-4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.javaboy.formlogin.*" />
+          <option name="PATTERN" value="org.javaboy.formlogin.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -401,7 +448,7 @@
       <module name="form-login-4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.javaboy.formlogin.*" />
+          <option name="PATTERN" value="org.javaboy.formlogin.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -444,7 +491,7 @@
       <updated>1586484367068</updated>
       <workItem from="1586484370446" duration="291000" />
       <workItem from="1587349380496" duration="8679000" />
-      <workItem from="1588507027640" duration="2699000" />
+      <workItem from="1588507027640" duration="4599000" />
     </task>
     <task id="LOCAL-00001" summary="通过jpa操作数据库认证和授权">
       <created>1587360879809</created>
@@ -453,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587360879809</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="SpringSecurity密码加密">
+      <created>1588510477214</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588510477214</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -468,12 +522,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11669000" />
+    <option name="totallyTimeSpent" value="13569000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="514" y="162" width="1211" height="759" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2272118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26452732" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -487,7 +542,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.53541076" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.58498585" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.22966507" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -521,7 +576,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="通过jpa操作数据库认证和授权" />
-    <option name="LAST_COMMIT_MESSAGE" value="通过jpa操作数据库认证和授权" />
+    <MESSAGE value="SpringSecurity密码加密" />
+    <option name="LAST_COMMIT_MESSAGE" value="SpringSecurity密码加密" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/login.html">
@@ -572,23 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/FormLoginApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -614,36 +653,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="75" lean-forward="true" selection-start-line="8" selection-start-column="75" selection-end-line="8" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="33" column="28" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="229">
           <caret line="51" column="9" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="9" />
           <caret line="52" column="25" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="25" />
           <caret line="53" column="68" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="68" />
@@ -654,6 +666,74 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#contextLoads#0;class#FormLoginApplicationTests#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="48" column="55" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/MethodService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#761#762#0" expanded="true" />
+            <element signature="e#797#798#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/controller/HelloController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+          <folding>
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#1070#1071#0" expanded="true" />
+            <element signature="e#1113#1114#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+            <element signature="e#1217#1218#0" expanded="true" />
           </folding>
         </state>
       </provider>
