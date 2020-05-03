@@ -6,6 +6,7 @@ import org.javaboy.formlogin.model.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +47,14 @@ class FormLoginApplicationTests {
         rs2.add(r2);
         u2.setRoles(rs2);
         userDao.save(u2);
+    }
+
+    @Test
+    void passwordTest() {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(encoder.encode("1234"));
+        }
     }
 
 }
