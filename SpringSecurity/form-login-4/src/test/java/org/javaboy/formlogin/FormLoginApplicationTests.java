@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootTest
 class FormLoginApplicationTests {
@@ -55,6 +56,20 @@ class FormLoginApplicationTests {
         for (int i = 0; i < 10; i++) {
             System.out.println(encoder.encode("1234"));
         }
+    }
+
+    @Test
+    void getOne(){
+        Optional<User> user = userDao.findById(1L);
+        User user1 = user.get();
+        System.out.println(user1);
+
+    }
+
+    @Test
+    void findByUserName(){
+        User javaboy = userDao.findUserByUsername("javaboy");
+        System.out.println(javaboy);
     }
 
 }

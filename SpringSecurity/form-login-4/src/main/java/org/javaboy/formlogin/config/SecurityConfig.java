@@ -83,6 +83,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasRole("user")
                 .anyRequest().authenticated()
                 .and()
+                // 记住密码功能相关文章： https://mp.weixin.qq.com/s?__biz=MzI1NDY0MTkzNQ==&mid=2247488300&idx=1&sn=5f08f7d5c9e98a0eb89eeb999b83c66b&scene=21#wechat_redirect
+                .rememberMe()  // 开启记住密码
+                .key("ThisIsKey")  // 用于生成令牌的key  如果不设置此项 服务器重启后 key会重新生成 导致记住密码功能失效
+                .and()
                 .formLogin()
                 .loginProcessingUrl("/doLogin")
                 .successHandler((req, resp, authentication) -> {

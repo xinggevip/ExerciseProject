@@ -1,224 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9048c33a-58e6-4e26-a3da-1d8d9003f358" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../AopDemo01/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AopDemo01/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/form-login-4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/form-login-4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/javaboy/formlogin/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/javaboy/formlogin/SecurityConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/org/javaboy/formlogin/FormLoginApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/javaboy/formlogin/FormLoginApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../websocket_study/websocket01/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../websocket_study/websocket01/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cache_study/spring-boot-cache01/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../cache_study/spring-boot-cache01/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../elasticSearch_study/spring-boot-elastic01/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../elasticSearch_study/spring-boot-elastic01/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../elasticSearch_study/spring-boot-elastic01/src/test/java/com/example/SpringBootElastic01ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../elasticSearch_study/spring-boot-elastic01/src/test/java/com/example/SpringBootElastic01ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lambda_streamApi_文件快_study/lambda-study01/lambda-study01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lambda_streamApi_文件快_study/lambda-study01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lambda_streamApi_文件快_study/lambda-study01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lambda_streamApi_文件快_study/lambda-study01/src/main/java/java8/StreamDemo01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lambda_streamApi_文件快_study/lambda-study01/src/main/java/java8/StreamDemo01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/homework/config/MyBatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/config/MyBatisPlusConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/homework/config/MyMateObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/config/MyMateObjectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/mp/demo/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/mp/demo/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../studyfrommook/src/test/java/com/mq/dao/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../studyfrommook/src/test/java/com/mq/dao/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../studyfrommook02/src/main/java/com/mp/service/StudentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../studyfrommook02/src/main/java/com/mp/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../studyfrommook02/src/main/java/com/mp/service/impl/StudentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../studyfrommook02/src/main/java/com/mp/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../studyfrommook02/src/test/java/com/mp/service/impl/UserServiceImplTest.java" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1198624681">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1305703895">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="3" />
-          <entry key="html" value="1" />
-          <entry key="java" value="9" />
-          <entry key="md" value="1" />
-          <entry key="properties" value="1" />
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="3" />
-          <entry key="JAVA" value="9" />
-          <entry key="Markdown" value="1" />
-          <entry key="Properties" value="1" />
-          <entry key="Svelte" value="1" />
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="815" />
-          <entry key="md" value="28" />
-          <entry key="properties" value="41" />
-          <entry key="txt" value="18" />
-          <entry key="xml" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="815" />
-          <entry key="Markdown" value="28" />
-          <entry key="PLAIN_TEXT" value="18" />
-          <entry key="Properties" value="41" />
-          <entry key="XML" value="16" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="48" column="55" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/controller/HelloController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-              <folding>
-                <element signature="e#966#967#0" expanded="true" />
-                <element signature="e#1010#1011#0" expanded="true" />
-                <element signature="e#1070#1071#0" expanded="true" />
-                <element signature="e#1113#1114#0" expanded="true" />
-                <element signature="e#1173#1174#0" expanded="true" />
-                <element signature="e#1217#1218#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/MethodService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#592#593#0" expanded="true" />
-                <element signature="e#627#628#0" expanded="true" />
-                <element signature="e#761#762#0" expanded="true" />
-                <element signature="e#797#798#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/dao/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
-              <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="65" column="11" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="51" column="9" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="9" />
-              <caret line="52" column="25" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="25" />
-              <caret line="53" column="68" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="68" />
-              <caret line="54" column="38" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="38" />
-              <caret line="55" column="55" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="55" />
-              <caret line="56" column="9" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="9" />
-              <caret line="57" column="5" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#contextLoads#0;class#FormLoginApplicationTests#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/FormLoginApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -230,202 +76,37 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/User.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserService.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/MethodService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/controller/HelloController.java" />
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/MySoft/apache-maven-3.5.4" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../MySoft/apache-maven-3.5.4" />
       </MavenGeneralSettings>
     </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="355" />
-    <option name="y" value="-20" />
-    <option name="width" value="1514" />
-    <option name="height" value="949" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
+  <component name="ProjectId" id="1bZ4lmY1eTr0HyvcSnhjVfQnDdT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="CatdeaLogs" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="form-login-4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="form-login-4" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="formlogin" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SearchEverywhereHistoryKey" value="MySQL8Dialect&#9;PSI&#9;JAVA://org.hibernate.dialect.MySQL8Dialect" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588511988783" />
-    <property name="last_opened_file_path" value="D:/知识库/github/oauth2-samples" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1588512061027" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../cache_study/spring-boot-cache01" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Spring Boot.FormLoginApplication">
     <configuration name="FormLoginApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -439,6 +120,38 @@
       <option name="PACKAGE_NAME" value="org.javaboy.formlogin" />
       <option name="MAIN_CLASS_NAME" value="org.javaboy.formlogin.FormLoginApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FormLoginApplicationTests.findByUserName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="form-login-4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.javaboy.formlogin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.javaboy.formlogin" />
+      <option name="MAIN_CLASS_NAME" value="org.javaboy.formlogin.FormLoginApplicationTests" />
+      <option name="METHOD_NAME" value="findByUserName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FormLoginApplicationTests.getOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="form-login-4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.javaboy.formlogin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.javaboy.formlogin" />
+      <option name="MAIN_CLASS_NAME" value="org.javaboy.formlogin.FormLoginApplicationTests" />
+      <option name="METHOD_NAME" value="getOne" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -458,6 +171,7 @@
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="BSP.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="FormLoginApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -468,12 +182,16 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.FormLoginApplication" />
       <item itemvalue="JUnit.FormLoginApplicationTests.contextLoads" />
       <item itemvalue="JUnit.FormLoginApplicationTests.passwordTest" />
+      <item itemvalue="Spring Boot.FormLoginApplication" />
+      <item itemvalue="JUnit.FormLoginApplicationTests.getOne" />
+      <item itemvalue="JUnit.FormLoginApplicationTests.findByUserName" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FormLoginApplicationTests.getOne" />
+        <item itemvalue="JUnit.FormLoginApplicationTests.findByUserName" />
         <item itemvalue="JUnit.FormLoginApplicationTests.passwordTest" />
         <item itemvalue="JUnit.FormLoginApplicationTests.contextLoads" />
       </list>
@@ -491,7 +209,12 @@
       <updated>1586484367068</updated>
       <workItem from="1586484370446" duration="291000" />
       <workItem from="1587349380496" duration="8679000" />
-      <workItem from="1588507027640" duration="4599000" />
+      <workItem from="1588507027640" duration="5270000" />
+      <workItem from="1588826436576" duration="173000" />
+      <workItem from="1588828812959" duration="4778000" />
+      <workItem from="1594879712480" duration="1165000" />
+      <workItem from="1595125012044" duration="11937000" />
+      <workItem from="1595251232538" duration="1452000" />
     </task>
     <task id="LOCAL-00001" summary="通过jpa操作数据库认证和授权">
       <created>1587360879809</created>
@@ -507,237 +230,90 @@
       <option name="project" value="LOCAL" />
       <updated>1588510477214</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="SpringSecurity方法安全">
+      <created>1588512049008</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588512049008</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="FormLoginApplicationTests_contextLoads - 2020.04.20 at 13h 24m 40s.xml">
-      <configuration name="FormLoginApplicationTests.contextLoads" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FormLoginApplicationTests_contextLoads - 2020.05.03 at 20h 08m 57s.xml">
-      <configuration name="FormLoginApplicationTests.contextLoads" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FormLoginApplicationTests_passwordTest - 2020.05.03 at 20h 34m 33s.xml">
-      <configuration name="FormLoginApplicationTests.passwordTest" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13569000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="514" y="162" width="1211" height="759" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26452732" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="JRebel" order="2" side_tool="true" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Learn" order="7" />
-      <window_info id="Web" order="8" side_tool="true" />
-      <window_info id="设计师" order="9" />
-      <window_info id="Designer" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.53541076" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.22966507" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="JRebel Executor" order="13" />
-      <window_info anchor="bottom" id="JRebel Console" order="14" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.3286119" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Word Book" order="5" side_tool="true" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="right" id="Bean Validation" order="10" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="通过jpa操作数据库认证和授权" />
     <MESSAGE value="SpringSecurity密码加密" />
-    <option name="LAST_COMMIT_MESSAGE" value="SpringSecurity密码加密" />
+    <MESSAGE value="SpringSecurity方法安全" />
+    <option name="LAST_COMMIT_MESSAGE" value="SpringSecurity方法安全" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.2.5.RELEASE/spring-boot-autoconfigure-2.2.5.RELEASE.jar!/org/springframework/boot/autoconfigure/jdbc/DataSourceProperties.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="75">
-            <caret line="3" selection-start-line="3" selection-end-line="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="42" column="9" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="65" column="11" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/FormLoginApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.12.Final/hibernate-core-5.4.12.Final.jar!/org/hibernate/dialect/MySQL8Dialect.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.2.5.RELEASE/spring-boot-autoconfigure-2.2.5.RELEASE.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaProperties.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-          <folding>
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1039#1040#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="51" column="9" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="9" />
-          <caret line="52" column="25" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="25" />
-          <caret line="53" column="68" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="68" />
-          <caret line="54" column="38" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="38" />
-          <caret line="55" column="55" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="55" />
-          <caret line="56" column="9" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="9" />
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#contextLoads#0;class#FormLoginApplicationTests#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="48" column="55" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/service/MethodService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#592#593#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-            <element signature="e#761#762#0" expanded="true" />
-            <element signature="e#797#798#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/controller/HelloController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-          <folding>
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#1010#1011#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1113#1114#0" expanded="true" />
-            <element signature="e#1173#1174#0" expanded="true" />
-            <element signature="e#1217#1218#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="654" y="274" key="#通知" timestamp="1588826451321">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="654" y="274" key="#通知/0.0.1536.824@0.0.1536.824" timestamp="1588826451321" />
+    <state x="496" y="141" width="957" height="734" key="FileChooserDialogImpl" timestamp="1595159174156">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588836171292" />
+    <state x="496" y="141" width="957" height="734" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595159174156" />
+    <state width="1877" height="272" key="GridCell.Tab.0.bottom" timestamp="1595252523296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state width="1877" height="272" key="GridCell.Tab.0.center" timestamp="1595252523296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state width="1877" height="272" key="GridCell.Tab.0.left" timestamp="1595252523296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state width="1877" height="272" key="GridCell.Tab.0.right" timestamp="1595252523296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state width="1877" height="272" key="GridCell.Tab.1.bottom" timestamp="1595252523296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state width="1877" height="272" key="GridCell.Tab.1.center" timestamp="1595252523296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state width="1877" height="272" key="GridCell.Tab.1.left" timestamp="1595252523296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state width="1877" height="272" key="GridCell.Tab.1.right" timestamp="1595252523296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="272" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state x="902" y="139" key="SettingsEditor" timestamp="1594879808416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="902" y="139" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594879808416" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595126433973">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595126433973" />
   </component>
   <component name="masterDetails">
     <states>

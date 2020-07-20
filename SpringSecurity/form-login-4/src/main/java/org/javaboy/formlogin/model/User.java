@@ -35,6 +35,10 @@ public class User implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     private List<Role> roles;
 
+    /**
+     * 返回用户角色
+     * @return
+     */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
@@ -44,31 +48,55 @@ public class User implements UserDetails {
         return authorities;
     }
 
+    /**
+     * 返回用户密码
+     * @return
+     */
     @Override
     public String getPassword() {
         return password;
     }
 
+    /**
+     * 返回用户名
+     * @return
+     */
     @Override
     public String getUsername() {
         return username;
     }
 
+    /**
+     * 账户是否未过期
+     * @return
+     */
     @Override
     public boolean isAccountNonExpired() {
         return accountNonExpired;
     }
 
+    /**
+     * 账户是否未锁定
+     * @return
+     */
     @Override
     public boolean isAccountNonLocked() {
         return accountNonLocked;
     }
 
+    /**
+     * 密码是否未过期
+     * @return
+     */
     @Override
     public boolean isCredentialsNonExpired() {
         return credentialsNonExpired;
     }
 
+    /**
+     * 账户是否可用
+     * @return
+     */
     @Override
     public boolean isEnabled() {
         return enabled;
