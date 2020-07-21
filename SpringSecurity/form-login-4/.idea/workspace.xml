@@ -21,19 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9048c33a-58e6-4e26-a3da-1d8d9003f358" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../AopDemo01/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../AopDemo01/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form-login-4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/form-login-4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/javaboy/formlogin/FormLoginApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/javaboy/formlogin/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/javaboy/formlogin/SecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/javaboy/formlogin/FormLoginApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/javaboy/formlogin/FormLoginApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/javaboy/formlogin/controller/HelloController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../cache_study/spring-boot-cache01/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../cache_study/spring-boot-cache01/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../elasticSearch_study/spring-boot-elastic01/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../elasticSearch_study/spring-boot-elastic01/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../elasticSearch_study/spring-boot-elastic01/src/test/java/com/example/SpringBootElastic01ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../elasticSearch_study/spring-boot-elastic01/src/test/java/com/example/SpringBootElastic01ApplicationTests.java" afterDir="false" />
@@ -43,7 +33,6 @@
       <change beforePath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/homework/config/MyBatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/config/MyBatisPlusConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/homework/config/MyMateObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/config/MyMateObjectHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/mp/demo/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../mybatisPlusGenerator/src/main/java/com/mp/demo/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../studyfrommook/src/test/java/com/mq/dao/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../studyfrommook/src/test/java/com/mq/dao/UserMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../studyfrommook02/src/main/java/com/mp/service/StudentService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../studyfrommook02/src/main/java/com/mp/service/UserService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../studyfrommook02/src/main/java/com/mp/service/impl/StudentServiceImpl.java" beforeDir="false" />
@@ -184,9 +173,9 @@
     <list>
       <item itemvalue="JUnit.FormLoginApplicationTests.contextLoads" />
       <item itemvalue="JUnit.FormLoginApplicationTests.passwordTest" />
-      <item itemvalue="Spring Boot.FormLoginApplication" />
       <item itemvalue="JUnit.FormLoginApplicationTests.getOne" />
       <item itemvalue="JUnit.FormLoginApplicationTests.findByUserName" />
+      <item itemvalue="Spring Boot.FormLoginApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -214,7 +203,8 @@
       <workItem from="1588828812959" duration="4778000" />
       <workItem from="1594879712480" duration="1165000" />
       <workItem from="1595125012044" duration="11937000" />
-      <workItem from="1595251232538" duration="1452000" />
+      <workItem from="1595251232538" duration="2208000" />
+      <workItem from="1595295082403" duration="2251000" />
     </task>
     <task id="LOCAL-00001" summary="通过jpa操作数据库认证和授权">
       <created>1587360879809</created>
@@ -237,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588512049008</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="security 记住密码功能">
+      <created>1595252776626</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595252776626</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,9 +259,14 @@
     <MESSAGE value="通过jpa操作数据库认证和授权" />
     <MESSAGE value="SpringSecurity密码加密" />
     <MESSAGE value="SpringSecurity方法安全" />
-    <option name="LAST_COMMIT_MESSAGE" value="SpringSecurity方法安全" />
+    <MESSAGE value="security 记住密码功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="security 记住密码功能" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="450" key="#com.intellij.ide.util.MemberChooser" timestamp="1595296695429">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="450" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595296695429" />
     <state x="654" y="274" key="#通知" timestamp="1588826451321">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -274,42 +276,46 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588836171292" />
     <state x="496" y="141" width="957" height="734" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595159174156" />
-    <state width="1877" height="272" key="GridCell.Tab.0.bottom" timestamp="1595252523296">
+    <state width="1877" height="290" key="GridCell.Tab.0.bottom" timestamp="1595297325837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
-    <state width="1877" height="272" key="GridCell.Tab.0.center" timestamp="1595252523296">
+    <state width="1877" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595297325837" />
+    <state width="1877" height="290" key="GridCell.Tab.0.center" timestamp="1595297325837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
-    <state width="1877" height="272" key="GridCell.Tab.0.left" timestamp="1595252523296">
+    <state width="1877" height="290" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595297325837" />
+    <state width="1877" height="290" key="GridCell.Tab.0.left" timestamp="1595297325837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
-    <state width="1877" height="272" key="GridCell.Tab.0.right" timestamp="1595252523296">
+    <state width="1877" height="290" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595297325837" />
+    <state width="1877" height="290" key="GridCell.Tab.0.right" timestamp="1595297325837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
-    <state width="1877" height="272" key="GridCell.Tab.1.bottom" timestamp="1595252523296">
+    <state width="1877" height="290" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595297325837" />
+    <state width="1877" height="290" key="GridCell.Tab.1.bottom" timestamp="1595297325837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
-    <state width="1877" height="272" key="GridCell.Tab.1.center" timestamp="1595252523296">
+    <state width="1877" height="290" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595297325837" />
+    <state width="1877" height="290" key="GridCell.Tab.1.center" timestamp="1595297325837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
-    <state width="1877" height="272" key="GridCell.Tab.1.left" timestamp="1595252523296">
+    <state width="1877" height="290" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595297325837" />
+    <state width="1877" height="290" key="GridCell.Tab.1.left" timestamp="1595297325837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
-    <state width="1877" height="272" key="GridCell.Tab.1.right" timestamp="1595252523296">
+    <state width="1877" height="290" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595297325837" />
+    <state width="1877" height="290" key="GridCell.Tab.1.right" timestamp="1595297325837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="272" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595252523296" />
+    <state width="1877" height="290" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595297325837" />
     <state x="902" y="139" key="SettingsEditor" timestamp="1594879808416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="902" y="139" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594879808416" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1595252778464">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595252778464" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1595126433973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
